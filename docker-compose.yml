@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      PG_HOST: "${PG_HOST}"
+      API_KEY: "${API_KEY}"
+      PG_PORT: "${PG_PORT}"
+      PG_DATABASE: "${PG_DATABASE}"
+      PG_USER: "${PG_USER}"
+      PG_PASSWORD: "${PG_PASSWORD}"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET}"
+    mem_limit: 350m
+    #network_mode: "host"
